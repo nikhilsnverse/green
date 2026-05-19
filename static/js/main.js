@@ -6,6 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = 'visible';
     }, 1800);
 
+    // HERO SLIDESHOW
+    const heroSlides = document.querySelectorAll('.hero-bg');
+    if (heroSlides.length > 1) {
+        let slideIndex = 0;
+        setInterval(() => {
+            heroSlides[slideIndex].classList.remove('active');
+            slideIndex = (slideIndex + 1) % heroSlides.length;
+            heroSlides[slideIndex].classList.add('active');
+        }, 2000);
+    }
+
     // NAVBAR SCROLL
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
